@@ -8,7 +8,7 @@ This repository explores **reinforcement learning for dynamic pricing** using th
 
 The work is organized primarily as two Jupyter notebooks:
 
-- [tabuluar_Q_learning.ipynb]
+- [tabuluar_Q_learning.ipynb](tabuluar_Q_learning.ipynb)
 - [deep_Q_learning.ipynb]
 
 Note: the filename `tabuluar_Q_learning.ipynb` contains a typo in the repository and is preserved as-is.
