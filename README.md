@@ -32,10 +32,9 @@ The `RL_concepts/` directory contains supporting lecture material:
 
 - [RL_concepts/Slide1_RL_Foundations.pdf](RL_concepts/Slide1_RL_Foundations.pdf)
 - [RL_concepts/Slide2_TabularRL.pdf](RL_concepts/Slide2_TabularRL.pdf)
+  - A simple Tabular Q-learning implementation for FrozenLake problem is given in [frozenlake_q_learning.py](RL_concepts/frozenlake_q_learning.py)
 
 These slides complement the notebooks by covering RL foundations and tabular RL concepts used in the implementation.
-
-A simple Tabular Q-learning implementation for FrozenLake problem is given in [frozenlake_q_learning.py](RL_concepts/frozenlake_q_learning.py)
 
 ## What The Project Does
 
