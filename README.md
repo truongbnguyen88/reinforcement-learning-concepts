@@ -24,6 +24,7 @@ RL-pricing/
 └── RL_concepts/
     ├── Slide1_RL_Foundations.pdf
     └── Slide2_TabularRL.pdf
+    └── frozenlake_q_learning.py
 ```
 
 ## Learning Materials
