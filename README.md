@@ -30,8 +30,8 @@ RL-pricing/
 
 The `RL_concepts/` directory contains supporting lecture material:
 
-- [RL_concepts/Slide1_RL_Foundations.pdf](/Users/truongnguyen/Desktop/Desktop-MacbookPro/U_of_L_MSCS/truongbnguyen88_github_repos/RL-pricing/RL_concepts/Slide1_RL_Foundations.pdf)
-- [RL_concepts/Slide2_TabularRL.pdf](/Users/truongnguyen/Desktop/Desktop-MacbookPro/U_of_L_MSCS/truongbnguyen88_github_repos/RL-pricing/RL_concepts/Slide2_TabularRL.pdf)
+- [RL_concepts/Slide1_RL_Foundations.pdf]
+- [RL_concepts/Slide2_TabularRL.pdf]
 
 These slides complement the notebooks by covering RL foundations and tabular RL concepts used in the implementation.
 
