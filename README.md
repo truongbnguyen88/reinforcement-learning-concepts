@@ -8,8 +8,8 @@ This repository explores **reinforcement learning for dynamic pricing** using th
 
 The work is organized primarily as two Jupyter notebooks:
 
-- [tabuluar_Q_learning.ipynb]
-- [deep_Q_learning.ipynb]
+- [tabuluar_Q_learning.ipynb](tabuluar_Q_learning.ipynb)
+- [deep_Q_learning.ipynb](deep_Q_learning.ipynb)
 
 Note: the filename `tabuluar_Q_learning.ipynb` contains a typo in the repository and is preserved as-is.
 
@@ -30,12 +30,12 @@ RL-pricing/
 
 The `RL_concepts/` directory contains supporting lecture material:
 
-- [RL_concepts/Slide1_RL_Foundations.pdf]
-- [RL_concepts/Slide2_TabularRL.pdf]
+- [RL_concepts/Slide1_RL_Foundations.pdf](RL_concepts/Slide1_RL_Foundations.pdf)
+- [RL_concepts/Slide2_TabularRL.pdf](RL_concepts/Slide2_TabularRL.pdf)
 
 These slides complement the notebooks by covering RL foundations and tabular RL concepts used in the implementation.
 
-A simple Tabular Q-learning implementation for FrozenLake problem is given in [frozenlake_q_learning.py]. See the file for details.
+A simple Tabular Q-learning implementation for FrozenLake problem is given in [frozenlake_q_learning.py](RL_concepts/frozenlake_q_learning.py)
 
 ## What The Project Does
 
