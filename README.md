@@ -30,7 +30,7 @@ RL-pricing/
 
 The `RL_concepts/` directory contains supporting lecture material:
 
-- [RL_concepts/Slide1_RL_Foundations.pdf]
+- [RL_concepts/Slide1_RL_Foundations.pdf](RL_concepts/Slide1_RL_Foundations.pdf)
 - [RL_concepts/Slide2_TabularRL.pdf]
 
 These slides complement the notebooks by covering RL foundations and tabular RL concepts used in the implementation.
