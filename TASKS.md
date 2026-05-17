@@ -4,13 +4,16 @@
 
 ## Waiting On
 
-## Someday
+## Next Up (proposed order)
 
 - [ ] **Slide4** — DQN theory deck (replay buffer, target network, Double DQN, dueling); general
-- [ ] **Slide5** — Policy gradient theory deck (REINFORCE derivation, actor-critic, PPO); general
-- [ ] **Slide6** — RL in production deck (OPE, reward hacking, A/B testing, drift); general
 - [ ] **M4 notebooks** — toy DQN notebook (CartPole or simple continuous-state env; self-contained)
+- [ ] **Slide5** — Policy gradient theory deck (REINFORCE derivation, actor-critic, PPO); general
 - [ ] **M5 notebooks** — toy policy gradient notebook (REINFORCE/A2C; self-contained)
+
+## Someday
+
+- [ ] **Slide6** — RL in production deck (OPE, reward hacking, A/B testing, drift); general
 - [ ] **M6 notebooks** — toy OPE notebook (IS, doubly-robust; self-contained)
 - [ ] **Top-level README rewrite** — course overview with module map
 
