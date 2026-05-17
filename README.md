@@ -57,7 +57,8 @@ modules/
 │
 ├── 03_applied_tabular/
 │   ├── slides/
-│   │   └── Slide3_AppliedTabularRL.md      ← offline RL, simulators, reward design, evaluation
+│   │   ├── Slide3_AppliedTabularRL.md      ← offline RL, simulators, reward design, evaluation
+|   |   └── Slide3_concepts.pdf             ← pdf presentation of Slide 3 materials (by NotebookLM)
 │   ├── notebooks/
 │   │   ├── 01_offline_rl_simulator.ipynb   ← dataset → demand model → simulator → Q-learning
 │   │   └── 02_reward_design_evaluation.ipynb  ← proxy rewards, reward hacking, paired tests
