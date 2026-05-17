@@ -2,21 +2,17 @@
 
 ## Active
 
-- [x] ~~Track B — Slide3 (Module 3 content)~~ (2026-05-17) — offline RL framing, reward design, demand model as simulator, evaluation methodology
-  - `modules/03_applied_tabular/slides/Slide3_AppliedTabularRL.md` (Marp markdown → PDF)
-- [ ] **Track C — pricing_pg.ipynb (Module 5)** - REINFORCE/A2C with continuous price action space; depends on shared/envs
-
 ## Waiting On
 
 ## Someday
 
-- [ ] **Slide4** - DQN theory deck (replay buffer, target network, Double DQN, dueling)
-- [ ] **Slide5** - Policy gradient theory deck (REINFORCE derivation, actor-critic, PPO)
-- [ ] **Slide6** - RL in production deck (OPE, reward hacking, A/B testing, drift)
-- [ ] **offline_evaluation.ipynb (Module 6)** - IS/doubly-robust OPE on pricing policies
-- [ ] **pricing_tabular.ipynb (Module 3)** - refactored notebook using shared/ imports
-- [ ] **pricing_dqn.ipynb (Module 4)** - refactored notebook using shared/ imports
-- [ ] **Top-level README rewrite** - course overview with module map
+- [ ] **Slide4** — DQN theory deck (replay buffer, target network, Double DQN, dueling); general
+- [ ] **Slide5** — Policy gradient theory deck (REINFORCE derivation, actor-critic, PPO); general
+- [ ] **Slide6** — RL in production deck (OPE, reward hacking, A/B testing, drift); general
+- [ ] **M4 notebooks** — toy DQN notebook (CartPole or simple continuous-state env; self-contained)
+- [ ] **M5 notebooks** — toy policy gradient notebook (REINFORCE/A2C; self-contained)
+- [ ] **M6 notebooks** — toy OPE notebook (IS, doubly-robust; self-contained)
+- [ ] **Top-level README rewrite** — course overview with module map
 
 ## Done
 
@@ -29,3 +25,11 @@
   - shared/utils/evaluation.py extracted (paired tests, bootstrap CI, multi-policy comparison)
   - requirements.txt added
   - All imports verified with smoke tests
+- [x] ~~Track B — Slide3 (Module 3 content)~~ (2026-05-17)
+  - `modules/03_applied_tabular/slides/Slide3_AppliedTabularRL.md` — general theory (no UCI); covers offline RL framing, demand model as simulator, reward design, evaluation methodology
+  - Rewrote from UCI-tied version to domain-agnostic after design change
+  - Updated CLAUDE.md: slides = general theory, notebooks = UCI applied
+  - Updated M4–M6 READMEs to reflect slides/notebooks split
+- [x] ~~Module 3 learning notebooks~~ (2026-05-17)
+  - `modules/03_applied_tabular/notebooks/01_offline_rl_simulator.ipynb` — toy market MDP; offline dataset → demand model → simulator → Q-learning → compounding error demo; smoke-tested
+  - `modules/03_applied_tabular/notebooks/02_reward_design_evaluation.ipynb` — revenue vs profit reward comparison, reward hacking demo (miscalibrated elasticity), full paired evaluation (t-test, Wilcoxon, sign test, bootstrap CI, Cohen's d); smoke-tested

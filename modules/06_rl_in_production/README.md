@@ -11,7 +11,7 @@
 
 **Slides (general):** Offline policy evaluation (importance sampling, doubly-robust estimator), reward hacking taxonomy, contextual bandits as a special case, A/B testing and causal inference, distribution shift detection and monitoring.
 
-**Notebooks (applied):** OPE on UCI pricing logged data (`shared/`); IS and doubly-robust revenue lift estimates.
+**Notebooks (self-contained toy):** IS and doubly-robust OPE on a synthetic logged dataset; comparison of OPE estimates against true policy value.
 
 ## Bridge to Next Module
 

@@ -2,7 +2,7 @@
 
 ## Me
 RL practitioner / MSCS student at U of L. Mathematically advanced.
-Building a structured RL course. Slides teach concepts generally; notebooks apply them to UCI Online Retail pricing.
+Building a structured RL course. Slides teach concepts generally. Notebooks use self-contained toy examples — no external datasets.
 
 ---
 
@@ -31,19 +31,18 @@ requirements.txt
 | Slide1 | modules/01_foundations/slides/Slide1_RL_Foundations.pdf |
 | Slide2 | modules/02_tabular_rl/slides/Slide2_TabularRL.pdf |
 | FrozenLake script | modules/02_tabular_rl/notebooks/frozenlake_q_learning.py |
-| pricing env | shared/envs/pricing_env.py — the single shared RL environment |
-| shared modules | shared/ — imported by all module notebooks; never duplicate this logic |
+| shared modules | shared/ — preserved from original repo; not used in new notebooks |
 
 ## Course Module Map
 
-| Module | Topic | Key new content needed |
-|--------|-------|----------------------|
-| 01 | RL Foundations | gridworld exercise notebook |
-| 02 | Tabular RL | Double Q / Expected SARSA slide extension |
-| 03 | Applied Tabular RL | Slide3 + refactored pricing_tabular.ipynb |
-| 04 | Deep RL (DQN) | Slide4 + refactored pricing_dqn.ipynb |
-| 05 | Policy Gradients | Slide5 + pricing_pg.ipynb (new) |
-| 06 | RL in Production | Slide6 + offline_evaluation.ipynb (new) |
+| Module | Topic | Content |
+|--------|-------|---------|
+| 01 | RL Foundations | Slide1 (done); gridworld exercise notebook |
+| 02 | Tabular RL | Slide2 (done); FrozenLake notebook |
+| 03 | Applied Tabular RL | Slide3 (done); 2 toy notebooks (done) |
+| 04 | Deep RL (DQN) | Slide4; toy DQN notebook |
+| 05 | Policy Gradients | Slide5; toy policy gradient notebook |
+| 06 | RL in Production | Slide6; toy OPE notebook |
 
 ---
 
@@ -62,12 +61,13 @@ requirements.txt
 3. **Failure modes** — what breaks and why
 4. **Bridge** — connection to next module
 
-**Notebooks (applied — UCI Online Retail pricing via `shared/`):**
-1. **Toy example** — small clean self-contained environment
-2. **Pricing application** — same concept on the UCI pricing env using `shared/`
+**Notebooks (self-contained toy examples — no external datasets):**
+1. One or two notebooks per module using a minimal synthetic environment
+2. All data generated inline; no downloads, no `shared/` imports required
+3. Environment should be small enough that the true optimum is analytically known
 
-Slides must not reference UCI, specific datasets, or domain-specific code.
-Notebooks may use any example but must use `shared/` for the pricing application.
+Slides must not reference any specific dataset or domain.
+Notebooks must be fully self-contained and runnable without any external data.
 
 ### Explanation Depth
 - Define all mathematical notation on first use
@@ -77,7 +77,7 @@ Notebooks may use any example but must use `shared/` for the pricing application
 
 ### Cross-Module Continuity
 - Slides: conceptual callbacks only (e.g., "M2 introduced Q-learning; we now extend it")
-- Notebooks: the running UCI pricing example carries across M3–M6 via `shared/`
+- Notebooks: each module uses a fresh toy environment suited to the concept being taught
 - Explicitly state which module introduced each concept when referencing it
 - Double Q-learning in M4 (DQN) must callback to M2 (tabular Double Q)
 - Evaluation methodology introduced in M3 carries forward to M4, M5, M6
@@ -86,50 +86,38 @@ Notebooks may use any example but must use `shared/` for the pricing application
 
 ## Code Generation Rules
 
-### Always import from shared/
-All notebooks must import environment, demand model, and evaluation utilities
-from `shared/` — never redefine these functions inline:
-
-```python
-import sys; sys.path.insert(0, str(Path(__file__).parents[2]))
-from shared.demand_model import load_data, preprocess, fit_demand_model
-from shared.envs import ACTION_MULTS, qty_bin, state_to_vec, env_step
-from shared.utils import evaluate_policy, compare_policies
-```
-
 ### Notebook structure
 Each notebook must have these sections in order:
-1. Setup (imports, sys.path, device)
-2. Data loading (call shared functions — no inline data code)
+1. Setup (stdlib + numpy/torch/sklearn imports only — no shared/ or data downloads)
+2. Environment definition (all constants and transition functions defined inline)
 3. Concept introduction (markdown with equations)
-4. Implementation (clean, typed, commented only where non-obvious)
+4. Implementation (clean, typed, no comments except for non-obvious invariants)
 5. Training / experiment
-6. Evaluation (use shared evaluate_policy / compare_policies)
+6. Evaluation (inline; paired comparison where applicable)
 7. Visualization
 8. Summary + bridge to next module
 
 ### Code style
 - Python 3.11+, explicit type hints on function signatures
-- No inline redefinition of anything already in `shared/`
+- No external data dependencies — all environments are synthetic
 - No giant monolithic cells — one logical unit per cell
-- Seed all RNG (numpy and torch) at the top of the training section
-- Use `pathlib.Path` for all file paths
+- Seed all RNG (numpy and torch) explicitly; pass seeds as function parameters
+- Each notebook must be runnable top-to-bottom with `jupyter nbconvert --to notebook --execute`
 
 ---
 
 ## Cost Efficiency vs. Quality Rules
 
 ### When to be concise (save tokens)
-- Boilerplate imports, setup cells → minimal comments, no explanation
-- Utility functions already documented in `shared/` → import + one-line usage comment only
+- Boilerplate imports and environment setup cells → minimal comments, no explanation
 - Visualizations → standard matplotlib; no elaborate customization unless it aids understanding
-- Repeated patterns (e.g., the training loop structure is the same across M3–M5) → reuse, don't rewrite
+- Repeated patterns (e.g., training loop structure is the same across M3–M5) → reuse, don't rewrite
 
 ### When to invest depth (spend tokens)
 - First introduction of a concept (e.g., Bellman equation in M1, replay buffer in M4) → full derivation
 - Reward design and its failure modes → always thorough; this is the hardest concept for the audience
 - Evaluation methodology → full explanation once (M3), then reference back
-- Any place where the pricing context diverges from the toy example → explicit callout
+- Any place where an assumption breaks or a subtlety is non-obvious → explicit callout
 
 ### Default behavior
 - For **new notebooks**: plan the section structure first, confirm before writing full cells

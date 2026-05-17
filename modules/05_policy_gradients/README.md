@@ -11,7 +11,7 @@
 
 **Slides (general):** Policy gradient theorem, REINFORCE derivation, variance reduction via baselines, advantage estimation, actor-critic (A2C), PPO clipped surrogate objective.
 
-**Notebooks (applied):** Policy gradient methods on the UCI pricing env (`shared/`); continuous action space extension.
+**Notebooks (self-contained toy):** REINFORCE and A2C on a simple continuous-action environment; policy network and value baseline implemented from scratch.
 
 ## Bridge to Next Module
 
