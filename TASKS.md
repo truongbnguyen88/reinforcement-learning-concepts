@@ -2,7 +2,8 @@
 
 ## Active
 
-- [ ] **Track B — Slide3 (Module 3 content)** - offline RL framing, reward design, demand model as simulator, evaluation methodology
+- [x] ~~Track B — Slide3 (Module 3 content)~~ (2026-05-17) — offline RL framing, reward design, demand model as simulator, evaluation methodology
+  - `modules/03_applied_tabular/slides/Slide3_AppliedTabularRL.md` (Marp markdown → PDF)
 - [ ] **Track C — pricing_pg.ipynb (Module 5)** - REINFORCE/A2C with continuous price action space; depends on shared/envs
 
 ## Waiting On
