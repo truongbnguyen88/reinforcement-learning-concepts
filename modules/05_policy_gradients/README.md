@@ -9,7 +9,9 @@
 
 ## Concepts
 
-REINFORCE, advantage estimation, actor-critic (A2C), PPO. Continuous price multiplier action space.
+**Slides (general):** Policy gradient theorem, REINFORCE derivation, variance reduction via baselines, advantage estimation, actor-critic (A2C), PPO clipped surrogate objective.
+
+**Notebooks (applied):** Policy gradient methods on the UCI pricing env (`shared/`); continuous action space extension.
 
 ## Bridge to Next Module
 

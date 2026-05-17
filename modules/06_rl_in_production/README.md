@@ -9,7 +9,9 @@
 
 ## Concepts
 
-Offline policy evaluation (importance sampling, doubly-robust), reward hacking, contextual bandits, A/B testing, distribution shift monitoring.
+**Slides (general):** Offline policy evaluation (importance sampling, doubly-robust estimator), reward hacking taxonomy, contextual bandits as a special case, A/B testing and causal inference, distribution shift detection and monitoring.
+
+**Notebooks (applied):** OPE on UCI pricing logged data (`shared/`); IS and doubly-robust revenue lift estimates.
 
 ## Bridge to Next Module
 

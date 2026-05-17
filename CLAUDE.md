@@ -2,7 +2,7 @@
 
 ## Me
 RL practitioner / MSCS student at U of L. Mathematically advanced.
-Building a structured RL course grounded in applied dynamic pricing (UCI Online Retail).
+Building a structured RL course. Slides teach concepts generally; notebooks apply them to UCI Online Retail pricing.
 
 ---
 
@@ -55,21 +55,29 @@ requirements.txt
 - Assume NO prior RL knowledge; assume strong Python and stats background
 
 ### Per-Module Content Pattern
-Every module must follow this sequence:
-1. **Theory** — formal definitions, key equations, intuition
-2. **Toy example** — small clean environment (FrozenLake, gridworld, 2-state MDP)
-3. **Pricing application** — same concept applied to the UCI retail pricing env
 
-Never skip the toy example. It is the bridge between theory and the applied domain.
+**Slides (general — no domain-specific examples):**
+1. **Theory** — formal definitions, key equations, intuition
+2. **Algorithm or framework** — derivation, pseudocode, assumptions
+3. **Failure modes** — what breaks and why
+4. **Bridge** — connection to next module
+
+**Notebooks (applied — UCI Online Retail pricing via `shared/`):**
+1. **Toy example** — small clean self-contained environment
+2. **Pricing application** — same concept on the UCI pricing env using `shared/`
+
+Slides must not reference UCI, specific datasets, or domain-specific code.
+Notebooks may use any example but must use `shared/` for the pricing application.
 
 ### Explanation Depth
 - Define all mathematical notation on first use
 - Derive key update rules step by step (don't skip steps for the target audience)
-- State assumptions explicitly; flag when they are violated in the pricing context
+- State assumptions explicitly; flag when they can be violated in applied contexts
 - Connect each new concept back to a prior module's concept (explicit callbacks)
 
 ### Cross-Module Continuity
-- Maintain a single running example: pricing a retail product
+- Slides: conceptual callbacks only (e.g., "M2 introduced Q-learning; we now extend it")
+- Notebooks: the running UCI pricing example carries across M3–M6 via `shared/`
 - Explicitly state which module introduced each concept when referencing it
 - Double Q-learning in M4 (DQN) must callback to M2 (tabular Double Q)
 - Evaluation methodology introduced in M3 carries forward to M4, M5, M6
@@ -157,11 +165,11 @@ Each module must explicitly highlight:
 
 - typical implementation mistakes
 - conceptual misunderstandings
-- failure modes in pricing context
+- general failure modes (slides); pricing-specific failure modes (notebooks)
 
 Examples:
-- leakage via future demand signals
-- unstable Q updates due to large rewards
+- leakage via future information in state
+- unstable Q updates due to unscaled rewards
 - misleading convergence in stochastic environments
 
 ## Evaluation Philosophy
@@ -173,9 +181,9 @@ Evaluation must:
 - use confidence intervals where possible
 - separate training vs evaluation environments
 
-In pricing context:
+In notebooks (pricing context):
 - explicitly compare against historical pricing
-- quantify tradeoff: revenue vs churn proxy
+- quantify tradeoff: revenue vs proxy metrics
 
 ## Shared Module Stability
 
